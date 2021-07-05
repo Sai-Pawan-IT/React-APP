@@ -128,6 +128,7 @@ const AddSong = ({ onUpload }) => {
     const uploadSong = async () => {
         //Upload the song
         console.log('songData', songData);
+        console.log(mp3Data);
         const { title, description, owner } = songData;
         const { key } = await Storage.put(`${uuid()}.mp3`, mp3Data, { contentType: 'audio/mp3' });
         const createSongInput = {
@@ -158,7 +159,7 @@ onUpload();
                 value={songData.description}
                 onChange={e => setSongData({ ...songData, description: e.target.value })}
             />
-            <input type="file" accept="audio/mp3" onChange={e => setMp3Data(e.target.files[0])} />
+            <input type="file" accept="audio/mp3" onChange={e => setMp3Data(e.target.files[0])}/>
             <IconButton onClick={uploadSong}>
                 <PublishIcon />
             </IconButton>

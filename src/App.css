@@ -25,6 +25,7 @@
 .songList {
     display: flex;
     flex-direction: column;
+    background-color: transparent;
 }
 
 .songCard {
